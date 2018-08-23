@@ -14,8 +14,11 @@ var playingGame = true
 //This loop will run while we're playing the game
 repeat {
     //This is the random number that we generated. We cast it from UInt32 to an Int
-    
     let randomNumber = Int(arc4random_uniform(101))
+    
+    //This statement initializes the start of the game by asking for user input to enter their name. When user enters their name the game begins
+    print("Please enter a name.")
+    let name = String(readLine()!)
     
     //Printing out the random number of debugging
     print("Random Number: \(randomNumber)")
@@ -24,16 +27,16 @@ repeat {
     var numberOfGuesses = 5
     
     //Welcome the user and prompt them for input
-    print("Welcome to the Guessing Game!")
-    print("Please guess a number between 0 to 100.")
+    print("Welcome to the Guessing Game, \(name)!")
+    print("Please guess a number between 0 to 100. (Btw it really has to be a number so plz don't enter something like, \"Big Bouncy Boi\" orrrr you'll get an error. So don't. Seriously.)")
     var userGuess = Int(readLine()!)
     
     //If the user enters a value that can't be converted to an integer, userGuess will equal nil.
     
     //Input Validation
     while userGuess == nil {
-        //Prompt the user for
-        print("Please enter a valid number")
+        //Prompt the user to enter a vaild number
+        print("Error! Please enter a valid number. (told ya so)")
         //Get user input again
         userGuess = Int(readLine()!)
         
@@ -96,7 +99,7 @@ repeat {
         
     }; if userGuess == randomNumber {
         //Tell the user they won and ask them if they want to play again
-        print("You win!")
+        print("You win! (You must really be a good guesser)")
         print("Would you like to play again? Y/N")
         
         //Get user input to check
